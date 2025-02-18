@@ -8,13 +8,11 @@
   <body>
     <script>
       var frutas = ["maça", "banana", "uva", "mamão", "pêra"];
-      for (var fruta of frutas) {
-        document.write(`${fruta} <br/>`);
-      }
-
-      frutas.forEach(function (fruta) {
-        document.write(`${fruta} <br/>`);
-      });
+      document.write(frutas);
+      document.write("<br/>");
+      frutas.push("manga");
+      document.write(frutas);
+      document.write(`<br/>`);
     </script>
   </body>
 </html>
