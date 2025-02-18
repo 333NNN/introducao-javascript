@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var numeros = [1, 2, 3, 4, 5];
+      for (var num of numeros) {
+        if (num % 2 == 0) {
+          numeros.push(num + 1);
+        } else if (num % 2 != 0) {
+          numeros.splice(num, 1);
+        }
+      }
+      document.write(numeros);
+    </script>
+  </body>
+</html>
