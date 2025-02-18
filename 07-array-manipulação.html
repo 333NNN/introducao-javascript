@@ -7,10 +7,23 @@
   </head>
   <body>
     <script>
-      var frutas = ["maça", "banana", "uva", "mamão", "pêra"];
+      var frutas = ["maçã", "banana", "uva", "mamão", "pêra"];
       document.write(frutas);
       document.write("<br/>");
+
       frutas.push("manga");
+      document.write(frutas);
+      document.write(`<br/>`);
+
+      frutas.pop();
+      document.write(frutas);
+      document.write(`<br/>`);
+
+      frutas.unshift("manga");
+      document.write(frutas);
+      document.write(`<br/>`);
+
+      frutas.shift();
       document.write(frutas);
       document.write(`<br/>`);
     </script>
