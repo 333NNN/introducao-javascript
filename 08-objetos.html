@@ -9,7 +9,19 @@
     <script>
       var pessoa = {};
       pessoa.nome = "Natã";
+      pessoa.idade = 33;
       console.log(pessoa);
+      console.log(JSON.stringify(pessoa));
+
+      var obj = {};
+      obj["model"] = "modelo";
+      obj["nome"] = "nome";
+      obj.start = function () {
+        console.log("Estou pronto");
+      };
+      console.log(obj);
+      console.log(JSON.stringify(obj));
+      obj.start();
     </script>
   </body>
 </html>
