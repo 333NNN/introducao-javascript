@@ -15,11 +15,27 @@
         return peso / (alt * alt);
       }
 
-      var result = IMC(peso, alt);
+      var resultIMC = IMC(peso, alt);
 
-      alert(`${nome}, seu IMC é ${result}`);
+      if (resultIMC > 40) {
+        alert(
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau III`
+        );
+      } else if (resultIMC > 35 || resultIMC < 39.9){
+        alert(
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau II`
+        );
+      } else if (resultIMC > 30 || resultIMC < 34.9) {
+        alert(
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau I`
+        );
+      } else if (resultIMC > 25 || resultIMC < 29.9) {
+        alert(
+          `${nome}, seu IMC é ${resultIMC}. Você está com sobrepeso.`
+        );
+      } 
 
-      console.log(result);
+      console.log(resultIMC);
     </script>
   </body>
 </html>
