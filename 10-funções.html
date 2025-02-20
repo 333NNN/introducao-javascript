@@ -42,16 +42,15 @@
 
       var pessoa = {
         nome: "Natã",
-        idade: 33
+        idade: 33,
       };
       console.log(pessoa);
-      
-      var mudaNome = (objetoPessoa) => {
-        objetoPessoa.nome = 'Nathan',
-        objetoPessoa.municipio = "Vila Velha"
-      }
 
-      mudaNome(pessoa)
+      var mudaNome = (objetoPessoa) => {
+        (objetoPessoa.nome = "Nathan"), (objetoPessoa.municipio = "Vila Velha");
+      };
+
+      mudaNome(pessoa);
       console.log(pessoa);
     </script>
   </body>
