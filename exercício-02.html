@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc IMC</title>
+  </head>
+  <body>
+    <script>
+      var nome = prompt("Digite seu nome:");
+      var peso = parseFloat(prompt(`${nome}, digite seu peso(kg): `));
+      var alt = parseFloat(prompt(`${nome}, digite sua altura(ex.: 1.75): `));
+
+      function IMC(peso, alt) {
+        return peso / (alt * alt);
+      }
+
+      var result = IMC(peso, alt);
+
+      alert(`${nome}, seu IMC é ${result}`);
+
+      console.log(result);
+    </script>
+  </body>
+</html>
