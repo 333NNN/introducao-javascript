@@ -21,6 +21,38 @@
         console.log("2025");
       };
       mostrarAno();
+
+      // const dataAtual = new Date();
+      // const ano = dataAtual.getFullYear();
+      // const mes = (dataAtual.getMonth() + 1).toString().padStart(2, "0");
+      // const dia = dataAtual.getDate().toString().padStart(2, "0");
+      // const hora = dataAtual.getHours().toString().padStart(2, "0");
+      // const minutos = dataAtual.getMinutes().toString().padStart(2, "0");
+      // const segundos = dataAtual.getSeconds().toString().padStart(2, "0");
+
+      // const dataHoraFormatada = `${hora}:${minutos}:${segundos} ${ano}-${mes}-${dia} `;
+      // console.log(dataHoraFormatada);
+
+      var soma = (a, b) => {
+        return a + b;
+      };
+
+      var resultado = soma(15, 5);
+      console.log(resultado);
+
+      var pessoa = {
+        nome: "Natã",
+        idade: 33
+      };
+      console.log(pessoa);
+      
+      var mudaNome = (objetoPessoa) => {
+        objetoPessoa.nome = 'Nathan',
+        objetoPessoa.municipio = "Vila Velha"
+      }
+
+      mudaNome(pessoa)
+      console.log(pessoa);
     </script>
   </body>
 </html>
