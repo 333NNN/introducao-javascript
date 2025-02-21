@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media</title>
+  </head>
+  <body>
+    <script>
+      var numeros = [];
+
+      alert("Vamos tirar a média de uma soma de números: ");
+
+      for (var i = 0; i < 10; i++) {
+        var input = prompt("Insira um número inteiro: ");
+        while (isNaN(input) || input === "" || input === null) {
+          input = prompt("Por favor, insira um número válido: ");
+        }
+        numeros.push(parseInt(input));
+        console.log(input);
+      }
+      console.log(numeros);
+
+      function calcularMedia(numeros) {
+        if (numeros.length === 0) {
+          return "O array está vazio.";
+        }
+
+        var soma = numeros.reduce((acc, num) => acc + num, 0);
+        return soma / numeros.length;
+      }
+
+      alert(`Média do array: ${calcularMedia(numeros)}`);
+      console.log(calcularMedia(numeros));
+    </script>
+  </body>
+</html>

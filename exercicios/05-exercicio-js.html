@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Números primos</title>
+  </head>
+  <body>
+    <script>
+
+      function ehPrimo(num) {
+        if (num < 2) return false;
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      var numero = parseInt(
+        prompt("Digite um número para verificar se é primo:")
+      );
+
+      if (!isNaN(numero)) {
+        if (ehPrimo(numero)) {
+          alert(`O número ${numero} é primo: true`);
+        } else {
+          alert(`O número ${numero} é primo: false`);
+        }
+      } else {
+        alert("Por favor, insira um número válido.");
+      }
+    </script>
+  </body>
+</html>

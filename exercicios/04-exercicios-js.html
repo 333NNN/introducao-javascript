@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter para Maiúsculas</title>
+  </head>
+  <body>
+    <h1>Conversão para maiúsculas</h1>
+    <p>Converta qualquer texto:</p>
+    <input type="text" id="texto" name="texto" /><br />
+    <button onclick="maiusculas()">Converter</button>
+
+    <script>
+      function maiusculas() {
+        let text = document.getElementById("texto").value;
+        document.write("<h1>Conversão para maiúsculas</h1>");
+        document.write("<p>Texto convertido:</p>");
+        document.write("<p>" + text.toUpperCase() + "</p>");
+        document.write("<a href='javascript:location.reload()'>Voltar</a>");
+      }
+    </script>
+
+    <style>
+      input {
+        margin: 10px 0;
+        padding: 5px;
+        width: 300px;
+      }
+
+      button {
+        margin: 10px 0;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+</html>
