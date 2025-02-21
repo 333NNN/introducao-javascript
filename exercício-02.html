@@ -8,34 +8,48 @@
   <body>
     <script>
       var nome = prompt("Digite seu nome:");
-      var peso = parseFloat(prompt(`${nome}, digite seu peso(kg): `));
-      var alt = parseFloat(prompt(`${nome}, digite sua altura(ex.: 1.75): `));
+      var peso, alt;
+
+      while (true) {
+        peso = parseFloat(prompt(`${nome}, digite seu peso (kg): `));
+        alt = parseFloat(prompt(`${nome}, digite sua altura (ex.: 1.75): `));
+
+        if (!isNaN(peso) && !isNaN(alt) && peso > 0 && alt > 0) {
+          break;
+        }
+
+        alert(
+          "Por favor, insira valores numéricos válidos para peso e altura."
+        );
+      }
 
       function IMC(peso, alt) {
         return peso / (alt * alt);
       }
 
-      var resultIMC = IMC(peso, alt);
+      var resultIMC = IMC(peso, alt).toFixed(2);
 
       if (resultIMC > 40) {
         alert(
-          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau III`
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau III.`
         );
-      } else if (resultIMC > 35 || resultIMC < 39.9){
+      } else if (resultIMC > 35 && resultIMC <= 39.9) {
         alert(
-          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau II`
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau II.`
         );
-      } else if (resultIMC > 30 || resultIMC < 34.9) {
+      } else if (resultIMC > 30 && resultIMC <= 34.9) {
         alert(
-          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau I`
+          `${nome}, seu IMC é ${resultIMC}. Você está com obesidade grau I.`
         );
-      } else if (resultIMC > 25 || resultIMC < 29.9) {
-        alert(
-          `${nome}, seu IMC é ${resultIMC}. Você está com sobrepeso.`
-        );
-      } 
+      } else if (resultIMC > 25 && resultIMC <= 29.9) {
+        alert(`${nome}, seu IMC é ${resultIMC}. Você está com sobrepeso.`);
+      } else if (resultIMC >= 18.5 && resultIMC <= 24.9) {
+        alert(`${nome}, seu IMC é ${resultIMC}. Você está com peso normal.`);
+      } else {
+        alert(`${nome}, seu IMC é ${resultIMC}. Você está abaixo do peso.`);
+      }
 
-      console.log(resultIMC);
+      console.log(`IMC de ${nome}: ${resultIMC}`);
     </script>
   </body>
 </html>
