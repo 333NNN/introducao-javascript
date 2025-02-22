@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palíndromo</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      .container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #resultado {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .palindromo {
+        background-color: #dff0d8;
+        color: #3c763d;
+      }
+      .nao-palindromo {
+        background-color: #f2dede;
+        color: #a94442;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Verificador de Palíndromos</h1>
+      <p>Digite uma palavra ou frase para verificar se é um palíndromo:</p>
+
+      <input type="text" id="palavra" placeholder="Digite aqui" />
+      <button onclick="verificar()">Verificar</button>
+
+      <div id="resultado"></div>
+    </div>
+
+    <script>
+      function verificaPalindromo(palavra) {
+        palavra = palavra.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+        return palavra === palavra.split("").reverse().join("");
+      }
+
+      function verificar() {
+        let palavra = document.getElementById("palavra").value;
+        let resultado = document.getElementById("resultado");
+
+        if (palavra.trim() === "") {
+          resultado.innerHTML = "Por favor, digite uma palavra ou frase.";
+          resultado.className = "nao-palindromo";
+          return;
+        }
+
+        if (verificaPalindromo(palavra)) {
+          resultado.innerHTML = `"${palavra}" é um palíndromo!`;
+          resultado.className = "palindromo";
+        } else {
+          resultado.innerHTML = `"${palavra}" não é um palíndromo.`;
+          resultado.className = "nao-palindromo";
+        }
+      }
+
+      document
+        .getElementById("palavra")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            verificar();
+          }
+        });
+    </script>
+  </body>
+</html>
