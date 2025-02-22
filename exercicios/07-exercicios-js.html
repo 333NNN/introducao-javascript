@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porcentagem</title>
+  </head>
+  <h1>Calculadora de Porcentagem</h1>
+  <body>
+    <div class="form-container">
+      <div class="input-group">
+        <label for="numero">Número base:</label> <br />
+        <input type="number" id="numero" placeholder="Digite o número" />
+      </div>
+      <br />
+      <div class="input-group">
+        <label for="porcentagem">Porcentagem a adicionar:</label><br />
+        <input
+          type="number"
+          id="porcentagem"
+          placeholder="Digite a porcentagem"
+        />
+      </div>
+      <br />
+      <button onclick="calcularPorcentagem()">Calcular</button>
+
+      <div id="resultado" class="resultado" style="display: none">
+        <h2>Resultado:</h2>
+        <p id="calculo-detalhes"></p>
+        <p id="resultado-final" class="resultado-final"></p>
+      </div>
+    </div>
+
+    <script>
+      function calcularPorcentagem() {
+        let numero = parseFloat(document.getElementById("numero").value);
+        let porcentagem = parseFloat(
+          document.getElementById("porcentagem").value
+        );
+
+        if (isNaN(numero) || isNaN(porcentagem)) {
+          alert("Por favor, digite números válidos!");
+          return;
+        }
+
+        let adicional = (numero * porcentagem) / 100;
+        let resultado = numero + adicional;
+
+        document.getElementById("resultado").style.display = "block";
+
+        document.getElementById("calculo-detalhes").innerHTML = `
+            Número base: ${numero}<br>
+            Porcentagem adicionada: ${porcentagem}%<br>
+            Valor do adicional: ${adicional.toFixed(2)}
+        `;
+
+        document.getElementById(
+          "resultado-final"
+        ).innerHTML = `Resultado final: ${resultado.toFixed(2)}`;
+      }
+
+      document
+        .getElementById("numero")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            document.getElementById("porcentagem").focus();
+          }
+        });
+
+      document
+        .getElementById("porcentagem")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            calcularPorcentagem();
+          }
+        });
+    </script>
+
+    <style>
+      .resultado {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+      }
+
+      .resultado-final {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #4caf50;
+        margin: 20px 0;
+      }
+    </style>
+  </body>
+</html>

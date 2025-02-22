@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inverter Array</title>
+  </head>
+  <body>
+    <h2>Arrays Originais</h2>
+    <div id="originais"></div>
+
+    <button onclick="inverterValores()">Inverter Arrays</button>
+
+    <h2>Arrays Invertidos</h2>
+    <div id="invertidos"></div>
+
+    <script>
+      let conjunto1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let conjunto2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+      let conjunto3 = [true, false, false, true];
+
+      function inverterArray(array) {
+        return array.reverse();
+      }
+
+      function exibirOriginais() {
+        document.getElementById("originais").innerHTML = `
+                <p><strong>Conjunto 1:</strong> ${conjunto1}</p>
+                <p><strong>Conjunto 2:</strong> ${conjunto2}</p>
+                <p><strong>Conjunto 3:</strong> ${conjunto3}</p>
+            `;
+      }
+
+      function inverterValores() {
+        document.getElementById("invertidos").innerHTML = `
+                <p><strong>Conjunto 1 Invertido:</strong> ${inverterArray([
+                  ...conjunto1,
+                ])}</p>
+                <p><strong>Conjunto 2 Invertido:</strong> ${inverterArray([
+                  ...conjunto2,
+                ])}</p>
+                <p><strong>Conjunto 3 Invertido:</strong> ${inverterArray([
+                  ...conjunto3,
+                ])}</p>
+            `;
+      }
+
+      exibirOriginais();
+    </script>
+  </body>
+</html>
