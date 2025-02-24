@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binário</title>
+  </head>
+  <body>
+    <h2>Conversor de Número para Binário</h2>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" />
+    <button onclick="converterParaBinario()">Converter</button>
+
+    <p id="resultado"></p>
+    <script>
+      function paraBinario(numero) {
+        return numero.toString(2);
+      }
+
+      function converterParaBinario() {
+        let num = document.getElementById("numero").value;
+        if (num === "") {
+          document.getElementById("resultado").innerText =
+            "Por favor, digite um número!";
+          return;
+        }
+
+        let binario = paraBinario(parseInt(num));
+        document.getElementById(
+          "resultado"
+        ).innerText = `O número ${num} em binário é: ${binario}`;
+      }
+    </script>
+  </body>
 </html>
