@@ -3,37 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binário</title>
+    <title>Fatorial</title>
   </head>
   <body>
-    <h2>Conversor de Número para Binário</h2>
+    <h2>Calculadora de Fatorial</h2>
 
     <label for="numero">Digite um número:</label>
     <input type="number" id="numero" />
-    <button onclick="converterParaBinario()">Converter</button>
+    <button onclick="calcularFatorial()">Calcular</button>
 
     <p id="resultado"></p>
+
     <script>
-      function paraBinario(numero) {
-        return numero.toString(2);
+      function fatorial(n) {
+        if (n < 0) return "Não existe fatorial de número negativo.";
+        if (n === 0 || n === 1) return 1;
+
+        let resultado = 1;
+        for (let i = n; i > 1; i--) {
+          resultado *= i;
+        }
+        return resultado;
       }
 
-      function converterParaBinario() {
+      function calcularFatorial() {
         let num = document.getElementById("numero").value;
-        if (num === "") {
-          document.getElementById("resultado").innerText =
-            "Por favor, digite um número!";
-          return;
-        } else if (isNaN(num)) {
+        num = parseInt(num);
+
+        if (isNaN(num)) {
           document.getElementById("resultado").innerText =
             "Por favor, digite um número válido.";
           return;
         }
 
-        let binario = paraBinario(parseInt(num));
+        let resultado = fatorial(num);
         document.getElementById(
           "resultado"
-        ).innerText = `O número ${num} em binário é: ${binario}`;
+        ).innerText = `O fatorial de ${num} é: ${resultado}`;
       }
     </script>
   </body>
